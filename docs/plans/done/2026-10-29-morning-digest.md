@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-10-30
 ---
 
 # Morning digest
@@ -77,3 +78,18 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Run log reader | — | claude-code · opus-5.5 · medium | 2026-10-30 |
+| 2 | Digest page: GET /digest/:night | #1 | claude-code · sonnet-5.5 · not reported | 2026-10-30 |
+| 3 | Digest JSON: GET /api/digest/:night | #1 | claude-code · sonnet-5.5 · not reported | 2026-10-30 |
+| 4 | Board link: each night links to its digest | #1 | claude-code · sonnet-5.5 · low | 2026-10-30 |
+| 5 | Route tests for /digest and /api/digest | #2, #3 | claude-code · sonnet-5.5 · low | 2026-10-30 |
+| 6 | Preview for review | #2, #3, #4 | claude-code · opus-5.5 · medium | 2026-10-30 |
+| 7 | Clean up: take the lane marker off the preview | #6 | claude-code · opus-5.5 · medium | 2026-10-30 |
+
+The preview at https://jakubjanczyk.github.io/rig-handover/ was built in CI and deployed as a
+Pages artifact, never committed. The marker came off on 2026-10-30, after the review (ADR 0003).
