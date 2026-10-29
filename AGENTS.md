@@ -30,6 +30,19 @@ Read first: `docs/vision.md`, `docs/styleguide.md`. Decisions: `docs/adr/`.
 5. An issue is closed only when its "Done when" holds. If it can't hold yet, leave it open and
    say what it waits on.
 
+## What every issue carries
+
+Decided by the human at the morning-digest split (2026-10-29). The skill `plan-to-issues` uses it.
+
+- Body opens with `Source: plan.md § <n>`, the sub-section where there is one (`§ 2a`).
+- Label `plan:<plan name>` from the plan's frontmatter (e.g. `plan:morning-digest`).
+- Sections, in order: `## Scope`, `## Done when` (copied from the plan), `## Blocked by` (issue
+  numbers, `—` if none), `## Worker` (the suggested model).
+- Commit with `refs #n`, not `closes #n`, when the closing comment must come first: `closes #n`
+  closes the issue on push. Add the closing comment right after either way.
+- An issue whose done-when waits on someone else (a reviewer's look) stays open until they
+  confirm; say in a comment what it waits on.
+
 ## Skills
 
 Shared skills live in `.agents/skills/`, one folder each, `SKILL.md` inside. That folder is the
